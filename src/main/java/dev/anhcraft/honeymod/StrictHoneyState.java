@@ -16,7 +16,7 @@ public class StrictHoneyState extends FluidStateImpl {
         if(owner instanceof HoneyFluid){
             return false; // there is no "honey" tag currently, so always returns false
         } else {
-            return owner.matches(tag);
+            return owner.isIn(tag);
         }
     }
 }

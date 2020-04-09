@@ -50,7 +50,7 @@ public abstract class HoneyFluid extends BaseFluid {
 
     @Override
     protected boolean canBeReplacedWith(FluidState state, BlockView world, BlockPos pos, Fluid fluid, Direction direction) {
-        return state.getHeight(world, pos) >= 0.44444445F && fluid.matches(FluidTags.WATER);
+        return state.getHeight(world, pos) >= 0.44444445F && fluid.isIn(FluidTags.WATER);
     }
 
     @Override
@@ -77,7 +77,7 @@ public abstract class HoneyFluid extends BaseFluid {
     }
 
     @Override
-    public int method_15733(WorldView worldView) {
+    protected int getFlowSpeed(WorldView world) {
         return 4;
     }
 
@@ -91,7 +91,8 @@ public abstract class HoneyFluid extends BaseFluid {
         return fluid == HoneyMod.getInstance().honeyFluidStill || fluid == HoneyMod.getInstance().honeyFluidFlowing;
     }
 
-    public boolean matches(Tag<Fluid> tag) {
+    @Override
+    public boolean isIn(Tag<Fluid> tag) {
         return tag != FluidTags.LAVA;
     }
 
