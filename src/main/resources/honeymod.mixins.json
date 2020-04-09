@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "dev.anhcraft.honeymod.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "BottleMixin",
+    "SpongeMixin"
+  ],
+  "client": [
+    "BackgroundRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

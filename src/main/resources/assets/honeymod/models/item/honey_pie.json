@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "honeymod:item/honey_pie"
+  }
+}

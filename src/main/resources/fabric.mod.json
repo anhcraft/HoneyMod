@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "honeymod",
+  "version": "${version}",
+  "name": "Honey mod",
+  "description": "Sweet honey",
+  "authors": [
+    "anhcraft"
+  ],
+  "icon": "assets/honeymod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.anhcraft.honeymod.HoneyMod"
+    ],
+    "client": [
+      "dev.anhcraft.honeymod.HoneyModClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.7.2",
+    "fabric": "*",
+    "minecraft": "1.15.x"
+  },
+  "mixins": [
+    "honeymod.mixins.json"
+  ]
+}
