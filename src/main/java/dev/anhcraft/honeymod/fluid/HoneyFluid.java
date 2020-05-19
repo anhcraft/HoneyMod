@@ -1,16 +1,13 @@
 package dev.anhcraft.honeymod.fluid;
 
 import dev.anhcraft.honeymod.HoneyMod;
-import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FluidBlock;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.fluid.BaseFluid;
+import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.item.Item;
@@ -21,18 +18,16 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.tag.FluidTags;
 import net.minecraft.tag.Tag;
-import net.minecraft.util.DyeColor;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.BlockView;
-import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
-public abstract class HoneyFluid extends BaseFluid {
+public abstract class HoneyFluid extends FlowableFluid {
     @Override
     public Fluid getFlowing() {
         return HoneyMod.getInstance().honeyFluidFlowing;
@@ -71,7 +66,7 @@ public abstract class HoneyFluid extends BaseFluid {
     }
 
     @Override
-    protected void beforeBreakingBlock(IWorld world, BlockPos pos, BlockState state) {
+    protected void beforeBreakingBlock(WorldAccess world, BlockPos pos, BlockState state) {
         BlockEntity blockEntity = state.getBlock().hasBlockEntity() ? world.getBlockEntity(pos) : null;
         Block.dropStacks(state, world.getWorld(), pos, blockEntity);
     }
@@ -142,7 +137,7 @@ public abstract class HoneyFluid extends BaseFluid {
     }
 
     public static class Block extends FluidBlock {
-        public Block(BaseFluid fluid) {
+        public Block(FlowableFluid fluid) {
             super(fluid, Block.Settings.copy(Blocks.WATER).jumpVelocityMultiplier(0.4f).velocityMultiplier(0.9f));
         }
 
