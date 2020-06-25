@@ -40,7 +40,7 @@ public abstract class SpongeMixin {
             List<PlayerEntity> players = world.getNonSpectatingEntities(PlayerEntity.class, new Box(blockPos2).expand(8));
             for (BeeEntity bee : world.getNonSpectatingEntities(BeeEntity.class, new Box(blockPos2).expand(25))){
                 if(players.isEmpty()) break;
-                bee.setBeeAttacker(players.remove(0));
+                bee.setAttacker(players.remove(0));
             }
         }
     }

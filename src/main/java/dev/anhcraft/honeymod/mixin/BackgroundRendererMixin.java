@@ -1,6 +1,5 @@
 package dev.anhcraft.honeymod.mixin;
 
-import dev.anhcraft.honeymod.StrictHoneyState;
 import net.minecraft.client.render.BackgroundRenderer;
 import net.minecraft.fluid.FluidState;
 import org.objectweb.asm.Opcodes;
@@ -21,6 +20,6 @@ public abstract class BackgroundRendererMixin {
             method = "render(Lnet/minecraft/client/render/Camera;FLnet/minecraft/client/world/ClientWorld;IF)V"
     )
     private static FluidState fluidState(FluidState fluidState){
-        return new StrictHoneyState(fluidState);
+        return fluidState;
     }
 }

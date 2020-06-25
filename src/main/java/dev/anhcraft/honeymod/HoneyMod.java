@@ -27,7 +27,7 @@ public class HoneyMod implements ModInitializer {
         honeyFluidStill = new HoneyFluid.Still();
         honeyFluidFlowing = new HoneyFluid.Flowing();
         honeyBucket = new HoneyBucket(honeyFluidStill);
-        honeyFluidBlock = Registry.BLOCK.add(new Identifier(NAMESPACE, "honey"), new HoneyFluid.Block(honeyFluidStill));
+        honeyFluidBlock = Registry.register(Registry.BLOCK, new Identifier(NAMESPACE, "honey"), new HoneyFluid.Block(honeyFluidStill));
 
         Registry.register(Registry.FLUID, new Identifier(NAMESPACE, "honey_fluid"), honeyFluidStill);
         Registry.register(Registry.FLUID, new Identifier(NAMESPACE, "flowing_honey_fluid"), honeyFluidFlowing);
