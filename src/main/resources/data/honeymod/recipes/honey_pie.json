@@ -1,16 +1,21 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "minecraft:wheat",
-      "item_h": "minecraft:wheat"
-    },
-    {
-      "item": "minecraft:honey_bottle",
-      "item_h": "minecraft:honey_bottle"
-    }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "EHE"
   ],
-  "group": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:wheat"
+    },
+    "E": {
+      "item": "minecraft:egg"
+    },
+    "H": {
+      "item": "minecraft:honey_bottle"
+    }
+  },
+  "group": "food",
   "result": {
     "item": "honeymod:honey_pie",
     "count": 1

@@ -7,6 +7,6 @@ import net.minecraft.util.Rarity;
 
 public class HoneyPie extends Item {
     public HoneyPie() {
-        super(new Item.Settings().group(ItemGroup.FOOD).rarity(Rarity.COMMON).food(new FoodComponent.Builder().hunger(8).saturationModifier(0.4f).build()));
+        super(new Item.Settings().group(ItemGroup.FOOD).rarity(Rarity.COMMON).food(new FoodComponent.Builder().hunger(10).saturationModifier(0.2f).build()));
     }
 }
